@@ -1,0 +1,9 @@
+<input type="text" [(ngModel)]="search">
+<ul>
+    <li *ngFor="let product of products| search:search:'name' | slice:this.a:this.b ; let i=index">    
+        <h4>{{product.name}}</h4>
+        <h5>{{product.description}}</h5>
+        <span>{{product.price}}</span><br>
+        <span *ngIf="auth.isLogged"><a [routerLink]="['/addtocart/', product.id]">Add to cart</a></span>
+    </li>
+</ul>

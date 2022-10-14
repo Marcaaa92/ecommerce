@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let product of c">    
+        <h4>{{product.product.name}}</h4>
+        <h5>{{product.product.description}}</h5>
+        <span>Totale al pezzo {{product.product.price}}</span><br>
+        <span>Totale complessivo {{product.product.price*product.qty}}</span><br>
+        <span>Quantità {{product.qty}}</span><br>
+        <span *ngIf="auth.isLogged"><a [routerLink]="['/addtocart/', product.product.id]">Add to cart</a></span>
+    </li>
+</ul>
+<h1>TOTALE: {{getTotal()}}</h1>
