@@ -4,7 +4,7 @@
     <ul class="nav nav-pills">
       <li class="nav-item"><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link" aria-current="page">Home</a></li>
       <li class="nav-item"><a routerLink="/products" routerLinkActive="active" class="nav-link">Prodotti</a></li>
-      <li class="nav-item"><a routerLink="/cart" routerLinkActive="active" class="nav-link">Carrello</a></li>
+      <li class="nav-item"><a routerLink="/cart" routerLinkActive="active" class="nav-link">Carrello <span *ngIf="this.authService.isLogged">({{this.product.c.length}})</span></a></li>
       <li class="nav-item"><a routerLink="/login" routerLinkActive="active" class="nav-link" *ngIf="!authenticated()">Log-in</a></li>
       <li class="nav-item"><a routerLinkActive="active" class="nav-link" (click)="logout()" *ngIf="authenticated()">Logout</a></li>
     </ul>

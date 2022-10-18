@@ -38,4 +38,7 @@ export class ProductService{
            this.c.push({product:this.products[idd-1],qty:1})
         }
     }
+    getCartCount(){
+        return this.c.length
+    }
 }

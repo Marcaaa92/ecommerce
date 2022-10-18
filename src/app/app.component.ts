@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { AuthService } from './service/auth.service';
 import { AuthGuardService } from './service/auth-guard.service';
+import { Product } from './data/product.data';
+import { ProductService } from './service/products.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +11,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 export class AppComponent {
   title = 'ecommerce';
 
-  constructor(private authService :AuthService, private authGuardService :AuthGuardService){
+  constructor(public authService :AuthService, private authGuardService :AuthGuardService, public product: ProductService){
 
   }
   logout(){
